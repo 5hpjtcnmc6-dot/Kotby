@@ -1,161 +1,86 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#111827">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Fabric Shop">
-<link rel="manifest" href="./manifest.webmanifest">
-<link rel="apple-touch-icon" href="./icon-180.png">
-<title>Fabric Shop</title>
+<!doctype html><html><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111827"><meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Fabric Shop">
+<link rel="manifest" href="./manifest.webmanifest"><link rel="apple-touch-icon" href="./icon-180.png"><title>Fabric Shop</title>
 <style>
 :root{--bg:#f4f6f8;--card:#fff;--ink:#111827;--muted:#6b7280;--line:#e5e7eb;--danger:#dc2626;--ok:#15803d}
 *{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif}
-body{padding-bottom:88px}.app{max-width:760px;margin:auto;padding:env(safe-area-inset-top) 14px 20px}
-header{padding:18px 4px 12px;display:flex;justify-content:space-between;align-items:center}h1{font-size:25px;margin:0}h2{margin:8px 0 12px}.sub{color:var(--muted);font-size:13px;margin-top:3px}
-button,input,select{font:inherit}button{border:0;border-radius:12px;padding:12px 14px;font-weight:700;cursor:pointer}.primary{background:var(--ink);color:#fff}.secondary{background:#eef0f2;color:var(--ink)}.danger{background:#fee2e2;color:#991b1b}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin:10px 0;box-shadow:0 1px 3px #0000000b}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.stat b{display:block;font-size:21px;margin-top:5px}.label{font-size:12px;color:var(--muted)}
-.row{display:flex;gap:8px;align-items:center}.between{justify-content:space-between}.grow{flex:1}
-label{display:block;font-size:12px;color:var(--muted);margin:12px 0 6px}input,select{width:100%;padding:12px;border:1px solid #d1d5db;border-radius:11px;background:#fff;color:var(--ink)}
-nav{position:fixed;z-index:20;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);padding:8px max(8px,env(safe-area-inset-left)) calc(8px + env(safe-area-inset-bottom));display:flex;justify-content:center}
-nav .inner{width:min(760px,100%);display:grid;grid-template-columns:repeat(5,1fr);gap:5px}nav button{background:transparent;color:#6b7280;padding:8px 4px;font-size:11px}nav button.active{color:#111827;background:#eef0f2}
-section{display:none}section.active{display:block}.money{font-variant-numeric:tabular-nums}.pill{padding:5px 8px;border-radius:99px;background:#eef0f2;font-size:11px}.low{color:var(--danger);font-weight:800}.ok{color:var(--ok);font-weight:700}
-.list{display:flex;flex-direction:column;gap:8px}.item{border:1px solid var(--line);border-radius:13px;padding:12px}.tiny{font-size:12px;color:var(--muted)}.actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
-.modal{position:fixed;inset:0;background:#0008;z-index:30;display:none;align-items:flex-end}.modal.show{display:flex}.sheet{background:#fff;width:100%;max-height:90vh;overflow:auto;border-radius:22px 22px 0 0;padding:18px 16px calc(20px + env(safe-area-inset-bottom));max-width:760px;margin:auto}
-hr{border:0;border-top:1px solid var(--line);margin:14px 0}.receipt{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;white-space:pre-wrap}
-.empty{text-align:center;color:var(--muted);padding:25px 5px}.notice{background:#fff7ed;border:1px solid #fed7aa;border-radius:13px;padding:12px;font-size:13px;margin:10px 0}
+body{padding-bottom:90px}.app{max-width:760px;margin:auto;padding:env(safe-area-inset-top) 14px 20px}
+header{padding:18px 4px 12px;display:flex;justify-content:space-between;align-items:center}h1{font-size:25px;margin:0}h2{margin:6px 0 12px}.sub,.tiny,.label{color:var(--muted);font-size:12px}.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;margin:10px 0;box-shadow:0 1px 3px #0000000b}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.stat b{display:block;font-size:20px;margin-top:5px}.row{display:flex;gap:8px;align-items:center}.between{justify-content:space-between}.grow{flex:1}
+button,input,select{font:inherit}button{border:0;border-radius:12px;padding:12px 14px;font-weight:700}.primary{background:#111827;color:#fff}.secondary{background:#eef0f2}.danger{background:#fee2e2;color:#991b1b}
+label{display:block;color:var(--muted);font-size:12px;margin:12px 0 6px}input,select{width:100%;padding:12px;border:1px solid #d1d5db;border-radius:11px;background:#fff}
+nav{position:fixed;z-index:20;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);padding:8px 8px calc(8px + env(safe-area-inset-bottom))}nav .inner{width:min(760px,100%);margin:auto;display:grid;grid-template-columns:repeat(5,1fr);gap:5px}nav button{background:transparent;color:#6b7280;padding:8px 4px;font-size:11px}nav button.active{color:#111827;background:#eef0f2}
+section{display:none}section.active{display:block}.list{display:flex;flex-direction:column;gap:8px}.item{border:1px solid var(--line);border-radius:13px;padding:12px}.actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.low{color:var(--danger);font-weight:800}.ok{color:var(--ok);font-weight:700}.empty{text-align:center;color:var(--muted);padding:25px 5px}.colorline{display:flex;justify-content:space-between;padding:9px 0;border-top:1px solid var(--line)}.swatch{width:12px;height:12px;border-radius:50%;border:1px solid #bbb;display:inline-block;margin-right:7px;vertical-align:-1px}
+.modal{position:fixed;inset:0;background:#0008;z-index:30;display:none;align-items:flex-end}.modal.show{display:flex}.sheet{background:#fff;width:100%;max-height:92vh;overflow:auto;border-radius:22px 22px 0 0;padding:18px 16px calc(22px + env(safe-area-inset-bottom));max-width:760px;margin:auto}.receipt{font-family:ui-monospace,monospace;font-size:13px;white-space:pre-wrap}
 @media(min-width:700px){.grid{grid-template-columns:repeat(4,1fr)}}
-</style>
-</head>
-<body>
-<div class="app">
-<header><div><h1 id="title">Fabric Shop</h1><div class="sub">Sales, inventory & expenses</div></div><button class="secondary" onclick="show('settings')">⚙️</button></header>
+</style></head><body><div class="app">
+<header><div><h1 id="title">Fabric Shop</h1><div class="sub">Colors, stock, sales & spending</div></div><button class="secondary" onclick="show('settings')">⚙️</button></header>
 
-<section id="dashboard" class="active">
-<div class="grid">
-<div class="card stat"><span class="label">Today's sales</span><b id="todaySales">EGP 0</b></div>
-<div class="card stat"><span class="label">This month's sales</span><b id="monthSales">EGP 0</b></div>
-<div class="card stat"><span class="label">Monthly spending</span><b id="monthSpend">EGP 0</b></div>
-<div class="card stat"><span class="label">Monthly net</span><b id="monthNet">EGP 0</b></div>
-</div>
-<div class="grid">
-<div class="card stat"><span class="label">Meters sold today</span><b id="todayMeters">0</b></div>
-<div class="card stat"><span class="label">Products</span><b id="productCount">0</b></div>
-<div class="card stat"><span class="label">Low stock</span><b id="lowCount">0</b></div>
-<div class="card stat"><span class="label">Expenses this month</span><b id="monthExpenseCount">0</b></div>
-</div>
+<section id="dashboard" class="active"><div class="grid">
+<div class="card stat"><span class="label">Today's sales</span><b id="todaySales">EGP 0</b></div><div class="card stat"><span class="label">This month's sales</span><b id="monthSales">EGP 0</b></div><div class="card stat"><span class="label">Monthly spending</span><b id="monthSpend">EGP 0</b></div><div class="card stat"><span class="label">Monthly net</span><b id="monthNet">EGP 0</b></div>
+</div><div class="grid"><div class="card stat"><span class="label">Meters today</span><b id="todayMeters">0</b></div><div class="card stat"><span class="label">Fabrics</span><b id="fabricCount">0</b></div><div class="card stat"><span class="label">Colors</span><b id="colorCount">0</b></div><div class="card stat"><span class="label">Low-stock colors</span><b id="lowCount">0</b></div></div>
 <div class="card"><div class="row between"><b>Quick sale</b><button class="primary" onclick="show('sale')">+ New sale</button></div></div>
-<div class="card"><div class="row between"><b>Quick expense</b><button class="primary" onclick="openExpense()">+ Add spending</button></div></div>
-<div class="card"><b>Low-stock items</b><div id="lowList" class="list" style="margin-top:10px"></div></div>
-</section>
+<div class="card"><div class="row between"><b>Quick spending</b><button class="primary" onclick="openExpense()">+ Add</button></div></div>
+<div class="card"><b>Low-stock colors</b><div id="lowList" class="list" style="margin-top:10px"></div></div></section>
 
-<section id="sale">
-<div class="card"><h2>New sale</h2>
-<label>Fabric</label><select id="saleProduct"></select>
+<section id="sale"><div class="card"><h2>New sale</h2>
+<label>Fabric</label><select id="saleFabric"></select><label>Color</label><select id="saleColor"></select>
 <label>Meters</label><input id="saleMeters" type="number" inputmode="decimal" step="0.01" min="0.01" placeholder="e.g. 2.5">
-<label>Price per meter</label><input id="salePrice" type="number" inputmode="decimal" step="0.01" min="0">
-<label>Discount</label><input id="saleDiscount" type="number" inputmode="decimal" step="0.01" min="0" value="0">
+<label>Price per meter</label><input id="salePrice" type="number" inputmode="decimal" step="0.01">
+<label>Discount</label><input id="saleDiscount" type="number" inputmode="decimal" step="0.01" value="0">
 <label>Payment</label><select id="salePayment"><option>Cash</option><option>Card</option><option>Other</option></select>
 <label>Customer (optional)</label><input id="saleCustomer" placeholder="Customer name">
-<div class="card" style="background:#f8fafc;margin-top:14px"><div class="row between"><span>Total</span><b id="saleTotal">EGP 0</b></div></div>
-<button class="primary" style="width:100%" onclick="saveSale()">Complete sale</button>
-</div></section>
+<div class="card"><div class="row between"><span>Total</span><b id="saleTotal">EGP 0</b></div></div>
+<button class="primary" style="width:100%" onclick="saveSale()">Complete sale</button></div></section>
 
-<section id="inventory">
-<div class="row between"><h2>Inventory</h2><button class="primary" onclick="openProduct()">+ Product</button></div>
-<div id="products" class="list"></div>
-</section>
+<section id="inventory"><div class="row between"><h2>Inventory</h2><button class="primary" onclick="openFabric()">+ Fabric</button></div><div id="fabrics" class="list"></div></section>
 
-<section id="history">
-<div class="card"><div class="row"><button class="secondary" onclick="historyMode='sales';renderHistory()">Sales</button><button class="secondary" onclick="historyMode='expenses';renderHistory()">Spending</button></div><input id="search" placeholder="Search..." oninput="renderHistory()" style="margin-top:8px"></div>
-<div id="sales" class="list"></div>
-</section>
+<section id="history"><div class="card"><div class="row"><button class="secondary" onclick="historyMode='sales';renderHistory()">Sales</button><button class="secondary" onclick="historyMode='expenses';renderHistory()">Spending</button></div><input id="search" placeholder="Search..." oninput="renderHistory()" style="margin-top:8px"></div><div id="historyList" class="list"></div></section>
 
-<section id="expenses">
-<div class="row between"><h2>Monthly spending</h2><button class="primary" onclick="openExpense()">+ Add</button></div>
-<div class="card"><div class="grid">
-<div class="stat"><span class="label">This month</span><b id="expensePageTotal">EGP 0</b></div>
-<div class="stat"><span class="label">Entries</span><b id="expensePageCount">0</b></div>
-</div></div>
-<div id="expenseList" class="list"></div>
-</section>
+<section id="expenses"><div class="row between"><h2>Monthly spending</h2><button class="primary" onclick="openExpense()">+ Add</button></div><div class="card"><div class="grid"><div class="stat"><span class="label">This month</span><b id="expenseTotal">EGP 0</b></div><div class="stat"><span class="label">Entries</span><b id="expenseCount">0</b></div></div></div><div id="expenseList" class="list"></div></section>
 
-<section id="settings">
-<div class="card"><h2>Settings</h2>
-<label>Shop name</label><input id="shopName">
-<label>Currency</label><input id="currency" value="EGP">
-<div class="actions"><button class="primary" onclick="saveSettings()">Save settings</button></div>
-</div>
-<div class="card"><h3>Backup</h3><p class="tiny">Backups include products, sales, spending and settings.</p>
-<div class="actions"><button class="secondary" onclick="backup()">Export backup</button><button class="secondary" onclick="document.getElementById('restore').click()">Restore backup</button><input id="restore" type="file" accept=".json,application/json" hidden onchange="restore(event)"></div></div>
-<div class="card"><h3>Install on iPhone</h3><p class="tiny">Open the website in Safari → Share → Add to Home Screen → Add.</p></div>
-</section>
-</div>
+<section id="settings"><div class="card"><h2>Settings</h2><label>Shop name</label><input id="shopName"><label>Currency</label><input id="currency" value="EGP"><div class="actions"><button class="primary" onclick="saveSettings()">Save settings</button></div></div>
+<div class="card"><h3>Backup</h3><p class="tiny">Backup includes fabrics, colors, stock, sales and spending.</p><div class="actions"><button class="secondary" onclick="backup()">Export backup</button><button class="secondary" onclick="$('restore').click()">Restore backup</button><input id="restore" type="file" accept=".json,application/json" hidden onchange="restore(event)"></div></div></section>
+</div><nav><div class="inner"><button class="active" data-tab="dashboard">🏠<br>Home</button><button data-tab="sale">🧾<br>Sale</button><button data-tab="inventory">📦<br>Stock</button><button data-tab="history">📋<br>History</button><button data-tab="expenses">💸<br>Spend</button></div></nav>
 
-<nav><div class="inner">
-<button class="active" data-tab="dashboard">🏠<br>Home</button>
-<button data-tab="sale">🧾<br>Sale</button>
-<button data-tab="inventory">📦<br>Stock</button>
-<button data-tab="history">📋<br>History</button>
-<button data-tab="expenses">💸<br>Spend</button>
-</div></nav>
+<div id="fabricModal" class="modal"><div class="sheet"><div class="row between"><h2 id="fmTitle">Fabric</h2><button class="secondary" onclick="closeFabric()">✕</button></div><input id="fabricId" type="hidden"><label>Fabric name</label><input id="fName" placeholder="e.g. Cotton 120"><label>Code / SKU</label><input id="fCode" placeholder="Optional"><label>Cost per meter</label><input id="fCost" type="number" inputmode="decimal" step="0.01"><label>Default selling price per meter</label><input id="fPrice" type="number" inputmode="decimal" step="0.01"><hr><div class="row between"><b>Colors</b><button class="secondary" onclick="addColorRow()">+ Color</button></div><div id="colorRows"></div><div class="actions"><button class="primary grow" onclick="saveFabric()">Save fabric</button><button class="danger" onclick="deleteFabric()">Delete</button></div></div></div>
 
-<div id="productModal" class="modal"><div class="sheet"><div class="row between"><h2 id="pmTitle">Product</h2><button class="secondary" onclick="closeModal()">✕</button></div>
-<input id="editId" type="hidden"><label>Name</label><input id="pName" placeholder="Fabric name"><label>Code</label><input id="pCode" placeholder="Optional code"><label>Color</label><input id="pColor" placeholder="Optional"><label>Width</label><input id="pWidth" placeholder="Optional">
-<label>Cost per meter</label><input id="pCost" type="number" inputmode="decimal" step="0.01"><label>Selling price per meter</label><input id="pPrice" type="number" inputmode="decimal" step="0.01"><label>Stock meters</label><input id="pStock" type="number" inputmode="decimal" step="0.01"><label>Low-stock level</label><input id="pLow" type="number" inputmode="decimal" step="0.01" value="5">
-<div class="actions"><button class="primary grow" onclick="saveProduct()">Save</button><button class="danger" onclick="deleteProduct()">Delete</button></div>
-</div></div>
-
-<div id="expenseModal" class="modal"><div class="sheet"><div class="row between"><h2 id="emTitle">Add spending</h2><button class="secondary" onclick="closeExpense()">✕</button></div>
-<input id="expenseId" type="hidden"><label>Amount</label><input id="eAmount" type="number" inputmode="decimal" step="0.01" min="0" placeholder="e.g. 1500">
-<label>Category</label><select id="eCategory"><option>Rent</option><option>Electricity</option><option>Water</option><option>Transport</option><option>Supplies</option><option>Wages</option><option>Phone / Internet</option><option>Maintenance</option><option>Other</option></select>
-<label>Description</label><input id="eDescription" placeholder="What was the spending for?">
-<label>Date</label><input id="eDate" type="date">
-<div class="actions"><button class="primary grow" onclick="saveExpense()">Save spending</button><button class="danger" onclick="deleteExpense()">Delete</button></div>
-</div></div>
+<div id="expenseModal" class="modal"><div class="sheet"><div class="row between"><h2>Spending</h2><button class="secondary" onclick="closeExpense()">✕</button></div><input id="expenseId" type="hidden"><label>Amount</label><input id="eAmount" type="number" inputmode="decimal" step="0.01"><label>Category</label><select id="eCategory"><option>Rent</option><option>Electricity</option><option>Water</option><option>Transport</option><option>Supplies</option><option>Wages</option><option>Phone / Internet</option><option>Maintenance</option><option>Other</option></select><label>Description</label><input id="eDescription"><label>Date</label><input id="eDate" type="date"><div class="actions"><button class="primary grow" onclick="saveExpense()">Save spending</button><button class="danger" onclick="deleteExpense()">Delete</button></div></div></div>
 
 <div id="receiptModal" class="modal"><div class="sheet"><div class="row between"><h2>Receipt</h2><button class="secondary" onclick="closeReceipt()">✕</button></div><div id="receipt" class="receipt"></div><button class="primary" style="width:100%;margin-top:12px" onclick="window.print()">Print / Save PDF</button></div></div>
 
 <script>
-const KEY='fabric_shop_iphone_v4';
-let db=JSON.parse(localStorage.getItem(KEY)||'null')||{settings:{shopName:'Fabric Shop',currency:'EGP'},products:[],sales:[],expenses:[]};
-db.expenses=db.expenses||[];
-let historyMode='sales';
-const $=id=>document.getElementById(id);
-const money=n=>`${db.settings.currency||'EGP'} ${Number(n||0).toFixed(2)}`;
+const KEY='fabric_shop_ios_v5';let db=JSON.parse(localStorage.getItem(KEY)||'null')||{settings:{shopName:'Fabric Shop',currency:'EGP'},fabrics:[],sales:[],expenses:[]};
+db.fabrics=db.fabrics||[];db.sales=db.sales||[];db.expenses=db.expenses||[];let historyMode='sales';
+const $=id=>document.getElementById(id),money=n=>`${db.settings.currency||'EGP'} ${Number(n||0).toFixed(2)}`,today=()=>new Date().toISOString().slice(0,10),monthKey=d=>String(d||'').slice(0,7),currentMonth=()=>today().slice(0,7),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const save=()=>localStorage.setItem(KEY,JSON.stringify(db));
-const today=()=>new Date().toISOString().slice(0,10);
-const monthKey=d=>String(d||'').slice(0,7);
-const currentMonth=()=>today().slice(0,7);
-const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-function show(id){document.querySelectorAll('section').forEach(x=>x.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));if(id==='dashboard')renderDash();if(id==='sale')renderSale();if(id==='inventory')renderProducts();if(id==='history')renderHistory();if(id==='expenses')renderExpenses();if(id==='settings'){ $('shopName').value=db.settings.shopName||'';$('currency').value=db.settings.currency||'EGP';}}
+function show(id){document.querySelectorAll('section').forEach(x=>x.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));if(id==='dashboard')renderDash();if(id==='sale')renderSale();if(id==='inventory')renderInventory();if(id==='history')renderHistory();if(id==='expenses')renderExpenses();if(id==='settings'){shopName.value=db.settings.shopName||'';currency.value=db.settings.currency||'EGP'}}
 document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>show(b.dataset.tab));
-function render(){ $('title').textContent=db.settings.shopName||'Fabric Shop';renderDash();renderSale();renderProducts();renderHistory();renderExpenses();}
-function renderDash(){let t=today(),m=currentMonth(),ss=db.sales.filter(s=>s.date.slice(0,10)===t),ms=db.sales.filter(s=>monthKey(s.date)===m),es=db.expenses.filter(e=>e.date.slice(0,7)===m),sales=ms.reduce((a,s)=>a+s.total,0),spend=es.reduce((a,e)=>a+e.amount,0);$('todaySales').textContent=money(ss.reduce((a,s)=>a+s.total,0));$('monthSales').textContent=money(sales);$('monthSpend').textContent=money(spend);$('monthNet').textContent=money(sales-spend);$('todayMeters').textContent=ss.reduce((a,s)=>a+s.meters,0).toFixed(2);$('productCount').textContent=db.products.length;$('lowCount').textContent=db.products.filter(p=>p.stock<=p.low).length;$('monthExpenseCount').textContent=es.length;let lows=db.products.filter(p=>p.stock<=p.low);$('lowList').innerHTML=lows.length?lows.map(p=>`<div class="item row between"><div><b>${esc(p.name)}</b><div class="tiny">${p.stock.toFixed(2)} m left</div></div><span class="low">LOW</span></div>`).join(''):'<div class="empty">No low-stock products.</div>'}
-function renderSale(){let s=$('saleProduct'),old=s.value;s.innerHTML=db.products.map(p=>`<option value="${p.id}">${esc(p.name)} — ${p.stock.toFixed(2)}m</option>`).join('')||'<option value="">Add a product first</option>';if(db.products.some(p=>p.id===old))s.value=old;let p=db.products.find(x=>x.id===s.value);if(p)$('salePrice').value=p.price;updateSaleTotal();s.onchange=()=>{let p=db.products.find(x=>x.id===s.value);if(p)$('salePrice').value=p.price;updateSaleTotal()};['saleMeters','salePrice','saleDiscount'].forEach(id=>$(id).oninput=updateSaleTotal)}
-function updateSaleTotal(){let m=+$('saleMeters').value||0,p=+$('salePrice').value||0,d=+$('saleDiscount').value||0;$('saleTotal').textContent=money(Math.max(0,m*p-d))}
-function saveSale(){let p=db.products.find(x=>x.id===$('saleProduct').value),m=+$('saleMeters').value,price=+$('salePrice').value,d=+$('saleDiscount').value||0;if(!p)return alert('Add/select a product first.');if(!(m>0))return alert('Enter meters.');if(m>p.stock+1e-9)return alert(`Only ${p.stock.toFixed(2)} meters in stock.`);if(price<0||d<0)return alert('Check price and discount.');let total=Math.max(0,m*price-d);p.stock-=m;let sale={id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),date:new Date().toISOString(),productId:p.id,product:p.name,meters:m,price,discount:d,total,payment:$('salePayment').value,customer:$('saleCustomer').value.trim()};db.sales.unshift(sale);save();$('saleMeters').value='';$('saleDiscount').value=0;$('saleCustomer').value='';render();openReceipt(sale);show('dashboard')}
-function renderProducts(){$('products').innerHTML=db.products.length?db.products.map(p=>`<div class="item"><div class="row between"><div><b>${esc(p.name)}</b><div class="tiny">${esc([p.code,p.color,p.width].filter(Boolean).join(' • '))}</div></div><span class="${p.stock<=p.low?'low':'ok'}">${p.stock.toFixed(2)} m</span></div><div class="tiny" style="margin-top:7px">${money(p.price)}/m · low at ${p.low}m</div><div class="actions"><button class="secondary" onclick="openProduct('${p.id}')">Edit</button></div></div>`).join(''):'<div class="empty">No products yet. Tap + Product.</div>'}
-function openProduct(id=''){let p=db.products.find(x=>x.id===id);$('editId').value=id;$('pmTitle').textContent=id?'Edit product':'New product';$('pName').value=p?.name||'';$('pCode').value=p?.code||'';$('pColor').value=p?.color||'';$('pWidth').value=p?.width||'';$('pCost').value=p?.cost??'';$('pPrice').value=p?.price??'';$('pStock').value=p?.stock??'';$('pLow').value=p?.low??5;$('productModal').classList.add('show')}
-function closeModal(){$('productModal').classList.remove('show')}
-function saveProduct(){let id=$('editId').value,name=$('pName').value.trim(),price=+$('pPrice').value,stock=+$('pStock').value,low=+$('pLow').value;if(!name)return alert('Enter a product name.');if(!(price>=0&&stock>=0&&low>=0))return alert('Check product numbers.');let obj={id:id||String(Date.now()),name,code:$('pCode').value.trim(),color:$('pColor').value.trim(),width:$('pWidth').value.trim(),cost:+$('pCost').value||0,price,stock,low};if(id){let i=db.products.findIndex(x=>x.id===id);db.products[i]=obj}else db.products.push(obj);save();closeModal();render()}
-function deleteProduct(){let id=$('editId').value;if(!id)return closeModal();if(confirm('Delete this product?')){db.products=db.products.filter(p=>p.id!==id);save();closeModal();render()}}
-function renderHistory(){let q=($('search').value||'').toLowerCase();if(historyMode==='expenses'){let arr=db.expenses.filter(e=>(e.description+' '+e.category).toLowerCase().includes(q));$('sales').innerHTML=arr.length?arr.map(e=>`<div class="item"><div class="row between"><b>${esc(e.category)}</b><b>${money(e.amount)}</b></div><div class="tiny">${esc(e.description||'No description')} • ${e.date}</div></div>`).join(''):'<div class="empty">No spending found.</div>'}else{let arr=db.sales.filter(s=>(s.product+' '+s.payment+' '+(s.customer||'')).toLowerCase().includes(q));$('sales').innerHTML=arr.length?arr.map(s=>`<div class="item" onclick='openReceipt(${JSON.stringify(s)})'><div class="row between"><b>${esc(s.product)}</b><b>${money(s.total)}</b></div><div class="tiny">${s.meters.toFixed(2)}m • ${s.date.slice(0,16).replace('T',' ')} • ${esc(s.payment)}${s.customer?' • '+esc(s.customer):''}</div></div>`).join(''):'<div class="empty">No sales found.</div>'}}
-function openExpense(id=''){let e=db.expenses.find(x=>x.id===id);$('expenseId').value=id;$('emTitle').textContent=id?'Edit spending':'Add spending';$('eAmount').value=e?.amount??'';$('eCategory').value=e?.category||'Other';$('eDescription').value=e?.description||'';$('eDate').value=e?.date||today();$('expenseModal').classList.add('show')}
-function closeExpense(){$('expenseModal').classList.remove('show')}
-function saveExpense(){let id=$('expenseId').value,amount=+$('eAmount').value,date=$('eDate').value;if(!(amount>0))return alert('Enter a spending amount.');if(!date)return alert('Choose a date.');let obj={id:id||String(Date.now()),amount,category:$('eCategory').value,description:$('eDescription').value.trim(),date};if(id){let i=db.expenses.findIndex(x=>x.id===id);db.expenses[i]=obj}else db.expenses.unshift(obj);save();closeExpense();render()}
-function deleteExpense(){let id=$('expenseId').value;if(!id)return closeExpense();if(confirm('Delete this spending entry?')){db.expenses=db.expenses.filter(e=>e.id!==id);save();closeExpense();render()}}
-function renderExpenses(){let m=currentMonth(),arr=db.expenses.filter(e=>e.date.slice(0,7)===m),total=arr.reduce((a,e)=>a+e.amount,0);$('expensePageTotal').textContent=money(total);$('expensePageCount').textContent=arr.length;$('expenseList').innerHTML=arr.length?arr.map(e=>`<div class="item"><div class="row between"><div><b>${esc(e.category)}</b><div class="tiny">${e.date}${e.description?' • '+esc(e.description):''}</div></div><b>${money(e.amount)}</b></div><div class="actions"><button class="secondary" onclick="openExpense('${e.id}')">Edit</button></div></div>`).join(''):'<div class="empty">No spending recorded this month.</div>'}
-function openReceipt(s){let lines=[db.settings.shopName||'Fabric Shop','',new Date(s.date).toLocaleString(),'-'.repeat(30),s.product,`${s.meters.toFixed(2)} m × ${money(s.price)}`,s.discount?`Discount: -${money(s.discount)}`:'',`TOTAL: ${money(s.total)}`,`Payment: ${s.payment}`,s.customer?`Customer: ${s.customer}`:'','', 'Thank you!'].filter(Boolean);$('receipt').textContent=lines.join('\\n');$('receiptModal').classList.add('show')}
-function closeReceipt(){$('receiptModal').classList.remove('show')}
-function saveSettings(){db.settings.shopName=$('shopName').value.trim()||'Fabric Shop';db.settings.currency=$('currency').value.trim()||'EGP';save();render();alert('Settings saved.')}
-function backup(){let blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`fabric-shop-backup-${today()}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
-function restore(ev){let f=ev.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let x=JSON.parse(r.result);if(!x.settings||!x.products||!x.sales)throw Error();x.expenses=x.expenses||[];db=x;save();render();alert('Backup restored.')}catch(e){alert('Invalid backup file.')}};r.readAsText(f);ev.target.value=''}
-if('serviceWorker' in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});
-render();
-</script>
-</body>
-</html>
+function allColors(){return db.fabrics.flatMap(f=>f.colors.map(c=>({...c,fabricId:f.id,fabric:f.name})))}
+function render(){title.textContent=db.settings.shopName||'Fabric Shop';renderDash();renderSale();renderInventory();renderHistory();renderExpenses()}
+function renderDash(){let t=today(),m=currentMonth(),ss=db.sales.filter(s=>s.date.slice(0,10)===t),ms=db.sales.filter(s=>monthKey(s.date)===m),es=db.expenses.filter(e=>e.date.slice(0,7)===m),sales=ms.reduce((a,s)=>a+s.total,0),spend=es.reduce((a,e)=>a+e.amount,0),cs=allColors();todaySales.textContent=money(ss.reduce((a,s)=>a+s.total,0));monthSales.textContent=money(sales);monthSpend.textContent=money(spend);monthNet.textContent=money(sales-spend);todayMeters.textContent=ss.reduce((a,s)=>a+s.meters,0).toFixed(2);fabricCount.textContent=db.fabrics.length;colorCount.textContent=cs.length;lowCount.textContent=cs.filter(c=>c.stock<=c.low).length;let lows=cs.filter(c=>c.stock<=c.low);lowList.innerHTML=lows.length?lows.map(c=>`<div class="item row between"><div><b>${esc(c.fabric)}</b><div class="tiny">🎨 ${esc(c.name)} · ${c.stock.toFixed(2)} m</div></div><span class="low">LOW</span></div>`).join(''):'<div class="empty">No low-stock colors.</div>'}
+function renderSale(){saleFabric.innerHTML=db.fabrics.map(f=>`<option value="${f.id}">${esc(f.name)}</option>`).join('')||'<option value="">Add a fabric first</option>';updateSaleColors();saleFabric.onchange=updateSaleColors;saleMeters.oninput=updateSaleTotal;salePrice.oninput=updateSaleTotal;saleDiscount.oninput=updateSaleTotal}
+function updateSaleColors(){let f=db.fabrics.find(x=>x.id===saleFabric.value);saleColor.innerHTML=f?f.colors.map(c=>`<option value="${c.id}">${esc(c.name)} — ${c.stock.toFixed(2)}m</option>`).join(''):'<option value="">No colors</option>';updateSalePrice();saleColor.onchange=updateSalePrice}
+function updateSalePrice(){let f=db.fabrics.find(x=>x.id===saleFabric.value),c=f?.colors.find(x=>x.id===saleColor.value);if(c)salePrice.value=c.price??f.price??0;updateSaleTotal()}
+function updateSaleTotal(){let m=+saleMeters.value||0,p=+salePrice.value||0,d=+saleDiscount.value||0;saleTotal.textContent=money(Math.max(0,m*p-d))}
+function saveSale(){let f=db.fabrics.find(x=>x.id===saleFabric.value),c=f?.colors.find(x=>x.id===saleColor.value),m=+saleMeters.value,price=+salePrice.value,d=+saleDiscount.value||0;if(!f||!c)return alert('Choose a fabric and color.');if(!(m>0))return alert('Enter meters.');if(m>c.stock+1e-9)return alert(`Only ${c.stock.toFixed(2)} meters of ${c.name} are in stock.`);let total=Math.max(0,m*price-d);c.stock-=m;let s={id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),date:new Date().toISOString(),fabric:f.name,color:c.name,meters:m,price,discount:d,total,payment:salePayment.value,customer:saleCustomer.value.trim()};db.sales.unshift(s);save();saleMeters.value='';saleDiscount.value=0;saleCustomer.value='';render();openReceipt(s);show('dashboard')}
+function renderInventory(){fabrics.innerHTML=db.fabrics.length?db.fabrics.map(f=>`<div class="card"><div class="row between"><div><b>${esc(f.name)}</b><div class="tiny">${esc(f.code)}${f.code?' · ':''}${money(f.price)}/m default</div></div><button class="secondary" onclick="openFabric('${f.id}')">Edit</button></div><div style="margin-top:8px">${f.colors.map(c=>`<div class="colorline"><span>🎨 ${esc(c.name)}</span><span class="${c.stock<=c.low?'low':'ok'}">${c.stock.toFixed(2)} m</span></div>`).join('')}</div></div>`).join(''):'<div class="empty">No fabrics yet. Tap + Fabric.</div>'}
+function openFabric(id=''){let f=db.fabrics.find(x=>x.id===id);fabricId.value=id;fmTitle.textContent=id?'Edit fabric':'New fabric';fName.value=f?.name||'';fCode.value=f?.code||'';fCost.value=f?.cost??'';fPrice.value=f?.price??'';colorRows.innerHTML='';(f?.colors||[]).forEach(c=>addColorRow(c));if(!f)addColorRow();fabricModal.classList.add('show')}
+function closeFabric(){fabricModal.classList.remove('show')}
+function addColorRow(c={}){let d=document.createElement('div');d.className='item color-row';d.dataset.id=c.id||String(Date.now()+Math.random());d.innerHTML=`<label>Color name</label><input class="cname" value="${esc(c.name||'')}"><label>Stock (meters)</label><input class="cstock" type="number" inputmode="decimal" step="0.01" value="${c.stock??''}"><label>Low-stock level</label><input class="clow" type="number" inputmode="decimal" step="0.01" value="${c.low??5}"><label>Price per meter (optional)</label><input class="cprice" type="number" inputmode="decimal" step="0.01" value="${c.price??''}"><button class="danger" onclick="this.parentElement.remove()">Remove color</button>`;colorRows.appendChild(d)}
+function saveFabric(){let id=fabricId.value,name=fName.value.trim(),price=+fPrice.value||0;if(!name)return alert('Enter a fabric name.');let colors=[...document.querySelectorAll('.color-row')].map(r=>({id:r.dataset.id,name:r.querySelector('.cname').value.trim(),stock:+r.querySelector('.cstock').value||0,low:+r.querySelector('.clow').value||0,price:r.querySelector('.cprice').value===''?price:+r.querySelector('.cprice').value})).filter(c=>c.name);if(!colors.length)return alert('Add at least one color.');let f={id:id||String(Date.now()),name,code:fCode.value.trim(),cost:+fCost.value||0,price,colors};if(id)db.fabrics[db.fabrics.findIndex(x=>x.id===id)]=f;else db.fabrics.push(f);save();closeFabric();render()}
+function deleteFabric(){let id=fabricId.value;if(id&&confirm('Delete this fabric and all its colors?')){db.fabrics=db.fabrics.filter(f=>f.id!==id);save();closeFabric();render()}}
+function renderHistory(){let q=(search.value||'').toLowerCase();if(historyMode==='expenses'){let a=db.expenses.filter(e=>(e.description+' '+e.category).toLowerCase().includes(q));historyList.innerHTML=a.length?a.map(e=>`<div class="item"><div class="row between"><b>${esc(e.category)}</b><b>${money(e.amount)}</b></div><div class="tiny">${e.date}${e.description?' · '+esc(e.description):''}</div></div>`).join(''):'<div class="empty">No spending found.</div>'}else{let a=db.sales.filter(s=>(s.fabric+' '+s.color+' '+s.payment+' '+(s.customer||'')).toLowerCase().includes(q));historyList.innerHTML=a.length?a.map(s=>`<div class="item" onclick='openReceipt(${JSON.stringify(s)})'><div class="row between"><b>${esc(s.fabric)} — ${esc(s.color)}</b><b>${money(s.total)}</b></div><div class="tiny">${s.meters.toFixed(2)}m · ${s.date.slice(0,16).replace('T',' ')} · ${esc(s.payment)}</div></div>`).join(''):'<div class="empty">No sales found.</div>'}}
+function openExpense(id=''){let e=db.expenses.find(x=>x.id===id);expenseId.value=id;eAmount.value=e?.amount??'';eCategory.value=e?.category||'Other';eDescription.value=e?.description||'';eDate.value=e?.date||today();expenseModal.classList.add('show')}
+function closeExpense(){expenseModal.classList.remove('show')}
+function saveExpense(){let id=expenseId.value,a=+eAmount.value;if(!(a>0))return alert('Enter an amount.');let o={id:id||String(Date.now()),amount:a,category:eCategory.value,description:eDescription.value.trim(),date:eDate.value||today()};if(id)db.expenses[db.expenses.findIndex(e=>e.id===id)]=o;else db.expenses.unshift(o);save();closeExpense();render()}
+function deleteExpense(){let id=expenseId.value;if(id&&confirm('Delete this spending entry?')){db.expenses=db.expenses.filter(e=>e.id!==id);save();closeExpense();render()}}
+function renderExpenses(){let a=db.expenses.filter(e=>e.date.slice(0,7)===currentMonth()),t=a.reduce((x,e)=>x+e.amount,0);expenseTotal.textContent=money(t);expenseCount.textContent=a.length;expenseList.innerHTML=a.length?a.map(e=>`<div class="item"><div class="row between"><div><b>${esc(e.category)}</b><div class="tiny">${e.date}${e.description?' · '+esc(e.description):''}</div></div><b>${money(e.amount)}</b></div><div class="actions"><button class="secondary" onclick="openExpense('${e.id}')">Edit</button></div></div>`).join(''):'<div class="empty">No spending recorded this month.</div>'}
+function openReceipt(s){receipt.textContent=[db.settings.shopName||'Fabric Shop','',new Date(s.date).toLocaleString(),'-'.repeat(30),`${s.fabric} — ${s.color}`,`${s.meters.toFixed(2)} m × ${money(s.price)}`,s.discount?`Discount: -${money(s.discount)}`:'',`TOTAL: ${money(s.total)}`,`Payment: ${s.payment}`,s.customer?`Customer: ${s.customer}`:'','Thank you!'].filter(Boolean).join('\n');receiptModal.classList.add('show')}
+function closeReceipt(){receiptModal.classList.remove('show')}
+function saveSettings(){db.settings.shopName=shopName.value.trim()||'Fabric Shop';db.settings.currency=currency.value.trim()||'EGP';save();render();alert('Settings saved.')}
+function backup(){let b=new Blob([JSON.stringify(db,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=`fabric-shop-backup-${today()}.json`;a.click()}
+function restore(ev){let f=ev.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let x=JSON.parse(r.result);if(!x.settings||!x.fabrics||!x.sales)throw Error();x.expenses=x.expenses||[];db=x;save();render();alert('Backup restored.')}catch(e){alert('Invalid backup file.')}};r.readAsText(f);ev.target.value=''}
+if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});render();
+</script></body></html>

@@ -1,15 +1,13 @@
-# Fabric Shop — iPhone Ready PWA
+# Fabric Shop iPhone App v5
 
-## Simple installation
-1. Upload ALL files in this folder to a static HTTPS website.
-2. Open the website in **Safari on iPhone**.
-3. Tap **Share**.
-4. Tap **Add to Home Screen**.
-5. Tap **Add**.
-6. Open the new Fabric Shop icon from your Home Screen.
+Upload all files to an HTTPS static website. Open the site in Safari on iPhone, then Share -> Add to Home Screen -> Add.
 
-## Important
-- Use HTTPS. A local file or plain HTTP will not provide full PWA behavior.
-- Data is stored on the iPhone/browser using local storage.
-- Use Settings → Export backup regularly.
-- This version includes monthly spending/expenses with categories, dates, editing/deleting, monthly totals and monthly net (sales minus spending).
+Features:
+- One fabric with multiple color variants
+- Independent meter stock for each color
+- Optional different selling price per color
+- Sales deduct only the selected color
+- Color-level low stock alerts
+- Monthly spending and monthly net
+- Receipts and backup/restore
+- Offline PWA after first load
